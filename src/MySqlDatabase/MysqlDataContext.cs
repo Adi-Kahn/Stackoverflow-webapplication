@@ -31,7 +31,7 @@ namespace MySqlDatabase
         {
             modelBuilder.Entity<SearchKeywordStoredProc>().HasKey(t => t.Id);
             modelBuilder.Entity<RankingStoredProc>().HasKey(p => p.postsid);
-            
+
 
             modelBuilder.Entity<Comments>().ToTable("comments");
             modelBuilder.Entity<Comments>().Property(t => t.CommentId).HasColumnName("commentid");
@@ -42,7 +42,7 @@ namespace MySqlDatabase
             modelBuilder.Entity<Comments>().Property(t => t.CommentCeated).HasColumnName("commentcreatedate");
             modelBuilder.Entity<Comments>().Property(t => t.OwnerUserId).HasColumnName("owneruserid");
 
-         
+
 
             modelBuilder.Entity<Posts>().ToTable("posts");
             modelBuilder.Entity<Posts>().Property(p => p.PostsId).HasColumnName("id");
@@ -109,7 +109,7 @@ namespace MySqlDatabase
 
             base.OnModelCreating(modelBuilder);
         }
-        
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -118,7 +118,7 @@ namespace MySqlDatabase
             //optionsBuilder.UseMySql("server=localhost;database=database3; uid=root; pwd=12345Mail");
 
             // For testing on wt-220.ruc.dk server
-            optionsBuilder.UseMySql("server=wt-220.ruc.dk;database=raw6; uid=raw6; pwd=raw6");
+            optionsBuilder.UseMySql("server=;database=; uid=; pwd=");
 
             base.OnConfiguring(optionsBuilder);
 
